@@ -1,0 +1,22 @@
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Designation</th>
+      <th scope="col">Prix</th>
+      <th scope="col">Categorie</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of listProducts">
+      <td>{{p.id}}</td>
+      <td>{{p.nom}}</td>
+      <td>{{p.designation}}</td>
+      <td>{{p.prix}}</td>
+      <td>{{p.idCategory}}</td>
+    </tr>
+
+  </tbody>
+</table>
