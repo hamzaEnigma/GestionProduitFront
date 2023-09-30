@@ -1,149 +1,23 @@
-<style>
-  /*!
-   * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/)
-   * Copyright 2013-2016 Start Bootstrap
-   * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
-   */
 
-   body {
-      overflow-x: hidden;
-   }
 
-  /* Toggle Styles */
+<!-- Sidebar -->
+<div id="sidebar-wrapper">
+  <ul class="sidebar-nav">
+    <li class="sidebar-brand">
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" class="me-2" viewBox="0 0 118 94" role="img" color="white">
+        <title>Bootstrap</title>
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"
+          fill="currentColor"></path>
+      </svg>
 
-  #wrapper {
-      padding-left: 0;
-      -webkit-transition: all 0.5s ease;
-      -moz-transition: all 0.5s ease;
-      -o-transition: all 0.5s ease;
-      transition: all 0.5s ease;
-  }
-
-  #wrapper.toggled {
-      padding-left: 250px;
-  }
-
-  #sidebar-wrapper {
-      z-index: 1000;
-      position: fixed;
-      left: 250px;
-      width: 0;
-      height: 100%;
-      margin-left: -250px;
-      overflow-y: auto;
-      background: #000;
-      -webkit-transition: all 0.5s ease;
-      -moz-transition: all 0.5s ease;
-      -o-transition: all 0.5s ease;
-      transition: all 0.5s ease;
-  }
-
-  #wrapper.toggled #sidebar-wrapper {
-      width: 250px;
-  }
-
-  #page-content-wrapper {
-      width: 100%;
-      position: absolute;
-      padding: 15px;
-  }
-
-  #wrapper.toggled #page-content-wrapper {
-      position: absolute;
-      margin-right: -250px;
-  }
-
-  /* Sidebar Styles */
-
-  .sidebar-nav {
-      position: absolute;
-      top: 0;
-      width: 250px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-  }
-
-  .sidebar-nav li {
-      text-indent: 20px;
-      line-height: 40px;
-  }
-
-  .sidebar-nav li a {
-      display: block;
-      text-decoration: none;
-      color: #999999;
-  }
-
-  .sidebar-nav li a:hover {
-      text-decoration: none;
-      color: #fff;
-      background: rgba(255,255,255,0.2);
-  }
-
-  .sidebar-nav li a:active,
-  .sidebar-nav li a:focus {
-      text-decoration: none;
-  }
-
-  .sidebar-nav > .sidebar-brand {
-      height: 65px;
-      font-size: 18px;
-      line-height: 60px;
-  }
-
-  .sidebar-nav > .sidebar-brand a {
-      color: #999999;
-  }
-
-  .sidebar-nav > .sidebar-brand a:hover {
-      color: #fff;
-      background: none;
-  }
-
-  @media(min-width:768px) {
-      #wrapper {
-          padding-left: 250px;
-      }
-
-      #wrapper.toggled {
-          padding-left: 0;
-      }
-
-      #sidebar-wrapper {
-          width: 250px;
-      }
-
-      #wrapper.toggled #sidebar-wrapper {
-          width: 0;
-      }
-
-      #page-content-wrapper {
-          padding: 20px;
-          position: relative;
-      }
-
-      #wrapper.toggled #page-content-wrapper {
-          position: relative;
-          margin-right: 0;
-      }
-  }
-  </style>
-
-      <!-- Sidebar -->
-      <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li class="sidebar-brand">
-                <a href="#">
-                    Admin E-commerce
-                </a>
-            </li>
-            <li>
-                <a routerLink="/welcome">Dashboard</a>
-            </li>
-            <li>
-                <a routerLink="/products">Produits</a>
-            </li>
-        </ul>
-    </div>
-    <!-- /#sidebar-wrapper -->
+    </li>
+    <li>
+      <a routerLink="/welcome">Dashboard</a>
+    </li>
+    <li>
+      <a routerLink="/products">Produits</a>
+    </li>
+  </ul>
+</div>
+<!-- /#sidebar-wrapper -->
