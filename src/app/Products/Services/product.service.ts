@@ -12,6 +12,12 @@ export class ProductService {
   getProducts(): Observable<Produit[]> {
     return of(produits);
   }
+  getProductById(id: string | null): Observable<Produit | undefined> {
+    return of(produits.find(x => x.id == id));
+  }
+  addProduct(product: Produit){
+    produits.push(product);
+  }
 }
 
 const produits: Produit[] = [{
