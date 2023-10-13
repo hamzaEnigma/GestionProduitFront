@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatIconModule } from '@angular/material/icon'
+
 
 
 
@@ -8,8 +10,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
   declarations: [],
   imports: [
     CommonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatIconModule,
   ],
-  exports: [MatSnackBarModule]
+  exports: [MatSnackBarModule, MatIconModule]
 })
 export class SharedModule { }

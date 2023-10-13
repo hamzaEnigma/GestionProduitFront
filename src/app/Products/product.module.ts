@@ -7,6 +7,7 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
+import { SharedModule } from '../Shared/shared.module';
 
 
 
@@ -22,6 +23,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     ReactiveFormsModule,
     MatButtonModule,
     MatDialogModule,
+    SharedModule
   ],
   exports: [
     ListProductsComponent,
