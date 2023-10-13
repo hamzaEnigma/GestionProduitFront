@@ -7,7 +7,6 @@ import { ProductModule } from './Products/product.module';
 import { WelcomeComponent } from './Welcome/welcome/welcome.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { SharedModule } from './Shared/shared.module';
 
 @NgModule({
