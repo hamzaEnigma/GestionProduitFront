@@ -1,9 +1,9 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Produit } from '../Models/produit.model';
 import { ProductService } from '../Services/product.service';
 import { Router } from '@angular/router';
-import { MatDialog, MatDialogRef, MatDialogConfig } from '@angular/material/dialog';
+import { MatDialogRef } from '@angular/material/dialog';
 import { NotificationService } from 'src/app/Shared/notification.service';
 
 @Component({
@@ -14,10 +14,10 @@ import { NotificationService } from 'src/app/Shared/notification.service';
 export class AddProductComponent implements OnInit {
 
   productForm = new FormGroup({
-    id: new FormControl(''),
-    nom: new FormControl(''),
-    designation: new FormControl(''),
-    prix: new FormControl('')
+    id: new FormControl(null, [Validators.required]),
+    nom: new FormControl(null, [Validators.required]),
+    designation: new FormControl(null),
+    prix: new FormControl(null, [Validators.required])
   })
 
   constructor(private productService: ProductService,
@@ -30,7 +30,11 @@ export class AddProductComponent implements OnInit {
   }
 
   addProduct() {
-    if (this.productForm.invalid) { return; }
+    if (this.productForm.invalid) {
+      this.productForm.markAllAsTouched();
+      this.productForm.updateValueAndValidity();
+      return;
+    }
     const product: Produit = {
       id: this.productForm.value['id'],
       nom: this.productForm.value['nom'],
@@ -41,5 +45,13 @@ export class AddProductComponent implements OnInit {
     this.dialogRef.close(product);
     this.notificationService.success('Ajouté avec succés');
   }
-
+  fillForm() {
+    this.productForm.patchValue({
+      id: '1234',
+      nom: 'polo',
+      designation: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the' +
+        'industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only',
+      prix: 120
+    })
+  }
 }
