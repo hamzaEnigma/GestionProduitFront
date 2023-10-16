@@ -12,11 +12,19 @@ export class ProductService {
   getProducts(): Observable<Produit[]> {
     return of(produits);
   }
+
   getProductById(id: string | null): Observable<Produit | undefined> {
     return of(produits.find(x => x.id == id));
   }
-  addProduct(product: Produit){
+
+  addProduct(product: Produit) {
     produits.push(product);
+  }
+
+  updateProduct(productToUpdate: Produit) {
+    let index = produits.findIndex(x => x.id == productToUpdate.id);
+    produits[index] = productToUpdate;
+    return produits;
   }
 }
 
@@ -47,4 +55,19 @@ const produits: Produit[] = [{
   "designation": "PC mac book pro max l faisait nuit noire.ette ululait. La pluie tombait su",
   "prix": 4.4,
   "idCategory": "006"
-}]
+},
+{
+  "id": "005",
+  "nom": "Oppo J7",
+  "designation": "PC mac book pro max l faisait nuit noire.ette ululait. La pluie tombait su",
+  "prix": 4.4,
+  "idCategory": "006"
+},
+{
+  "id": "006",
+  "nom": "Smart watch",
+  "designation": "PC mac book pro max l faisait nuit noire.ette ululait. La pluie tombait su",
+  "prix": 3.6,
+  "idCategory": "006"
+},
+]
