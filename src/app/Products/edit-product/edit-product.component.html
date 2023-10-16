@@ -1,0 +1,38 @@
+<h2 mat-dialog-title>Ajouter un produit</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="productForm">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Identifiant </mat-label>
+      <input matInput placeholder="0001..." formControlName="id" #id >
+      <mat-error>id Identifiant est obligatoire</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Nom </mat-label>
+      <input matInput placeholder="polo ..." formControlName="nom">
+      <mat-error *ngIf="productForm.controls['nom'].touched && productForm.controls['nom'].hasError">Nom Produit est
+        obligatoire</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Prix </mat-label>
+      <input matInput placeholder="34..." formControlName="prix">
+      <mat-error *ngIf="productForm.controls['prix'].touched && productForm.controls['prix'].hasError">Prix est
+        obligatoire est obligatoire</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Designation </mat-label>
+      <textarea matInput formControlName="designation"></textarea>
+    </mat-form-field>
+
+  </form>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-raised-button type="submit" color="primary" (click)="updateProduct()">Modifier </button>
+
+
+</mat-dialog-actions>

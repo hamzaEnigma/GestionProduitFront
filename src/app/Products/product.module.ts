@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
 import { SharedModule } from '../Shared/shared.module';
+import { EditProductComponent } from './edit-product/edit-product.component';
 
 
 
@@ -15,7 +16,8 @@ import { SharedModule } from '../Shared/shared.module';
   declarations: [
     ListProductsComponent,
     ProductDetailComponent,
-    AddProductComponent
+    AddProductComponent,
+    EditProductComponent
   ],
   imports: [
     CommonModule,
